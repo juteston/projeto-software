@@ -1,0 +1,152 @@
+UNOCHAPEC‡
+CIENCIA DA COMPUTAÄ«O 3¯ FASE
+ACADEMICA: JULIA LETICIA TESTON 
+
+
+
+1- Requisitos b†sicos (o que o sistema deve fazer):
+
+R1-  controle das vendas
+R2- armazenagem de matÇria prima
+R3- controle de pedidos dos clientes
+R4-  controle de fabricaá∆o
+R5--  fluxo de mercadoria e distribuiá∆o
+R6-  efetuar pagamento
+
+
+
+2-  Descriá∆o textual: (Estudo de caso)
+
+O estudo representa uma f†brica de concreto que inclui vendas, escrit¢rio e a planta industrial. A planta Ç composta de v†rios recept†culos de armazenagem de cimento, areia, cascalho e †gua; um misturador para preparaá∆o do concreto; duas balanáas para pesar os componentes; uma v†lvula de mediá∆o de componentes; controle de descarga de †gua; duas esteiras de transporte para levar os ingredientes s¢lidos ao misturador.
+Os clientes preenchem uma ordem de pedido entregue pelo representante com o tipo e quantidade de concreto para entrega em um ou mais dias pela transportadora da empresa. O departamento de vendas escalona a ordem e eventualmente encaminha a ind£stria para o encarregado de produá∆o. A ind£stria providància a execuá∆o do pedido, atravÇs da †rea de produá∆o e de matÇria prima. A produá∆o executa a ordem solicitando materiais que s∆o entregues no local pelo encarregado do almoxarifado e estocagem. O operador das m†quinas executa os controles de fabricaá∆o tendo como auxiliares os oper†rios respons†veis pela mistura dos componentes e pelo funcion†rio encarregado do controle de fluxo de trabalho. Caso algum produto da matÇria prima fique abaixo do n°vel de seguranáa, o encarregado da produá∆o emite ordem para o departamento de compras providenciar o pedido da mercadoria que ap¢s a entrega Ç verificado pelo setor de recebimento e distribuiá∆o se est† entregue conforme foi feito o pedido. Ap¢s a fabricaá∆o, o produto Ç entregue na construá∆o e o cliente efetua o pagamento que Ç recebido pelo departamento financeiro da ind£stria.
+
+
+3- Diagrama de casos de uso:
+-codigo
+@startuml
+
+left to right direction
+skinparam packageStyle rect
+actor Cliente
+actor "Departamento de Vendas" as dv
+actor Produá∆o
+actor "Almoxarifado e Estocagem" as ae
+actor "Setor de Recebimento e Distribuiá∆o" as srd
+actor Transportadora
+actor "Departamento Financeiro" as df
+
+rectangle "Sistema de Produá∆o da Ind£stria de Concreto" {
+  usecase "Registrar Pedido" as UC1
+  usecase "Escalonar Pedido" as UC2
+  usecase "Controlar Produá∆o" as UC3
+  usecase "Gerenciar Estoque" as UC4
+  usecase "Gerenciar Transporte e Entrega" as UC5
+  usecase "Receber Pagamento" as UC6
+
+  Cliente --> UC1
+  UC1 <-- dv
+  dv -- UC2
+  UC2 -- Produá∆o
+  Produá∆o -- UC3
+  UC3 -- ae
+  UC4 -- Produá∆o
+  UC4 -- ae
+  srd --> UC4
+  UC6 -- dv
+  df -->UC6
+
+  UC2 -- Produá∆o : <<extend>>
+  UC4 -- Produá∆o : <<extend>>
+  UC2 -> UC1 : <<include>>
+  Transportadora --> UC5 : <<include>>
+
+}
+
+@enduml
+
+-diagrama
+ 
+ 
+
+4- Modelo de classes de an†lise/ modelo conceitual:
+  
+5- Casos de uso expandidos:
+Caso de Uso: Registrar Pedido
+Ator principal: Cliente.
+Outros Atores: Departamento de Vendas.
+Descriá∆o: O cliente registra um pedido de concreto para entrega em um ou mais dias.
+
+Requisitos do Sistema:
+-RS1: O sistema deve permitir que os clientes registrem
+-RS2: O sistema deve permitir que os clientes registrem pedidos de concreto.
+-RS3: O sistema deve permitir que o departamento de vendas receba os pedidos de concreto registrados pelos clientes.
+
+Funá‰es B†sicas:
+-FB1:Registrar cliente.
+-FB2:Registrar pedido de Concreto.
+-FB3:Escalonar pedido de Concreto.
+
+PrÇ-condiá‰es:O cliente precisa estar registrado no sistema.
+
+Fluxo principal: 
+
+Aá∆o do Ator     | Resposta do Sistema    | Funá∆o B†sica/Requisito
+-----------------|-----------------------|----------------------------
+1. O cliente     | 2. O sistema exibe um     |RS2
+acessa a funcio|formulario de registro       | 
+nalidade de      |de pedidos, solicitando     |
+registro de        |as informaá‰es:               |
+pedidos            |a. Tipo de concreto         |
+                       |b.Quantidade de concreto |                     
+                       |c. Local da entrega           |
+                       |d. Prazo de entrega      |
+                 |                         |
+                 |                         |
+                 |                         |
+                 |                         |
+2. O cliente     |3. O sistema registra o  |FB2, RS2
+preenche o       |pedido e exibe uma       |
+formul†rio e     |confirmaá∆o para o       |
+confirma o       |cliente, contendo o      |
+pedido.          |numero do pedido         |           
+                 |e as informaá‰es do      |
+                 |pedido                   |               
+                 |                         |               
+                 |                         |
+                 |                         |
+                 |                         |
+4.               | 5.O sistema envia o     |FB3, RS3  
+                 |pedido para o            |
+                 |Departamento de Vendas   |                       
+
+Fluxo Alternativo:
+
+Aá∆o do ator     | Resposta do Sistema    | Funá∆o B†sica/ Requisito
+-----------------|------------------------|--------------------------
+2a.se o cliente  |2a1. O sistema exibe                   |
+n∆o estiver      |uma mensagem de erro                   | RS1
+registrado no    |informando que o                       |           
+sistema,  O       cliente n∆o est†                       |
+sistema exibe    |registrado e solicita                  |     
+uma mensagem     |que ele se registre                    |
+de erro e        |antes de prosseguir.                   |
+solicita que     |2a2. O cliente se                      | FB1, RS1
+o cliente se     |registra no sistema                    |
+ registre        |2a3. O caso de uso                     |
+                 |retorna para o passo 1                 |
+                 | do fluxo principal.                   |
+
+P¢s-condiá‰es: O pedido Ç registrado no sistema e enviado para o Departamento de vendas.
+
+
+
+
+
+
+
+
+
+
+
+
+

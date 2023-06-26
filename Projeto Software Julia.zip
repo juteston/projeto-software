@@ -1,24 +1,24 @@
-UNOCHAPECà
-CIENCIA DA COMPUTA€ÇO 3ø FASE
+UNOCHAPECÃ 
+CIENCIA DA COMPUTAâ‚¬Ã‡O 3Ã¸ FASE
 ACADEMICA: JULIA LETICIA TESTON 
 
 
 
-1- Requisitos b sicos (o que o sistema deve fazer):
+1- Requisitos bÂ sicos (o que o sistema deve fazer):
 
 R1-  controle das vendas
-R2- armazenagem de mat‚ria prima
+R2- armazenagem de matâ€šria prima
 R3- controle de pedidos dos clientes
-R4-  controle de fabrica‡Æo
-R5--  fluxo de mercadoria e distribui‡Æo
+R4-  controle de fabricaâ€¡Ã†o
+R5--  fluxo de mercadoria e distribuiâ€¡Ã†o
 R6-  efetuar pagamento
 
 
 
-2-  Descri‡Æo textual: (Estudo de caso)
+2-  Descriâ€¡Ã†o textual: (Estudo de caso)
 
-O estudo representa uma f brica de concreto que inclui vendas, escrit¢rio e a planta industrial. A planta ‚ composta de v rios recept culos de armazenagem de cimento, areia, cascalho e  gua; um misturador para prepara‡Æo do concreto; duas balan‡as para pesar os componentes; uma v lvula de medi‡Æo de componentes; controle de descarga de  gua; duas esteiras de transporte para levar os ingredientes s¢lidos ao misturador.
-Os clientes preenchem uma ordem de pedido entregue pelo representante com o tipo e quantidade de concreto para entrega em um ou mais dias pela transportadora da empresa. O departamento de vendas escalona a ordem e eventualmente encaminha a ind£stria para o encarregado de produ‡Æo. A ind£stria providˆncia a execu‡Æo do pedido, atrav‚s da  rea de produ‡Æo e de mat‚ria prima. A produ‡Æo executa a ordem solicitando materiais que sÆo entregues no local pelo encarregado do almoxarifado e estocagem. O operador das m quinas executa os controles de fabrica‡Æo tendo como auxiliares os oper rios respons veis pela mistura dos componentes e pelo funcion rio encarregado do controle de fluxo de trabalho. Caso algum produto da mat‚ria prima fique abaixo do n¡vel de seguran‡a, o encarregado da produ‡Æo emite ordem para o departamento de compras providenciar o pedido da mercadoria que ap¢s a entrega ‚ verificado pelo setor de recebimento e distribui‡Æo se est  entregue conforme foi feito o pedido. Ap¢s a fabrica‡Æo, o produto ‚ entregue na constru‡Æo e o cliente efetua o pagamento que ‚ recebido pelo departamento financeiro da ind£stria.
+O estudo representa uma fÂ brica de concreto que inclui vendas, escritÂ¢rio e a planta industrial. A planta â€š composta de vÂ rios receptÂ culos de armazenagem de cimento, areia, cascalho e Â gua; um misturador para preparaâ€¡Ã†o do concreto; duas balanâ€¡as para pesar os componentes; uma vÂ lvula de mediâ€¡Ã†o de componentes; controle de descarga de Â gua; duas esteiras de transporte para levar os ingredientes sÂ¢lidos ao misturador.
+Os clientes preenchem uma ordem de pedido entregue pelo representante com o tipo e quantidade de concreto para entrega em um ou mais dias pela transportadora da empresa. O departamento de vendas escalona a ordem e eventualmente encaminha a indÂ£stria para o encarregado de produâ€¡Ã†o. A indÂ£stria providË†ncia a execuâ€¡Ã†o do pedido, atravâ€šs da Â rea de produâ€¡Ã†o e de matâ€šria prima. A produâ€¡Ã†o executa a ordem solicitando materiais que sÃ†o entregues no local pelo encarregado do almoxarifado e estocagem. O operador das mÂ quinas executa os controles de fabricaâ€¡Ã†o tendo como auxiliares os operÂ rios responsÂ veis pela mistura dos componentes e pelo funcionÂ rio encarregado do controle de fluxo de trabalho. Caso algum produto da matâ€šria prima fique abaixo do nÂ¡vel de seguranâ€¡a, o encarregado da produâ€¡Ã†o emite ordem para o departamento de compras providenciar o pedido da mercadoria que apÂ¢s a entrega â€š verificado pelo setor de recebimento e distribuiâ€¡Ã†o se estÂ  entregue conforme foi feito o pedido. ApÂ¢s a fabricaâ€¡Ã†o, o produto â€š entregue na construâ€¡Ã†o e o cliente efetua o pagamento que â€š recebido pelo departamento financeiro da indÂ£stria.
 
 
 3- Diagrama de casos de uso:
@@ -29,16 +29,16 @@ left to right direction
 skinparam packageStyle rect
 actor Cliente
 actor "Departamento de Vendas" as dv
-actor Produ‡Æo
+actor Produâ€¡Ã†o
 actor "Almoxarifado e Estocagem" as ae
-actor "Setor de Recebimento e Distribui‡Æo" as srd
+actor "Setor de Recebimento e Distribuiâ€¡Ã†o" as srd
 actor Transportadora
 actor "Departamento Financeiro" as df
 
-rectangle "Sistema de Produ‡Æo da Ind£stria de Concreto" {
+rectangle "Sistema de Produâ€¡Ã†o da IndÂ£stria de Concreto" {
   usecase "Registrar Pedido" as UC1
   usecase "Escalonar Pedido" as UC2
-  usecase "Controlar Produ‡Æo" as UC3
+  usecase "Controlar Produâ€¡Ã†o" as UC3
   usecase "Gerenciar Estoque" as UC4
   usecase "Gerenciar Transporte e Entrega" as UC5
   usecase "Receber Pagamento" as UC6
@@ -46,17 +46,17 @@ rectangle "Sistema de Produ‡Æo da Ind£stria de Concreto" {
   Cliente --> UC1
   UC1 <-- dv
   dv -- UC2
-  UC2 -- Produ‡Æo
-  Produ‡Æo -- UC3
+  UC2 -- Produâ€¡Ã†o
+  Produâ€¡Ã†o -- UC3
   UC3 -- ae
-  UC4 -- Produ‡Æo
+  UC4 -- Produâ€¡Ã†o
   UC4 -- ae
   srd --> UC4
   UC6 -- dv
   df -->UC6
 
-  UC2 -- Produ‡Æo : <<extend>>
-  UC4 -- Produ‡Æo : <<extend>>
+  UC2 -- Produâ€¡Ã†o : <<extend>>
+  UC4 -- Produâ€¡Ã†o : <<extend>>
   UC2 -> UC1 : <<include>>
   Transportadora --> UC5 : <<include>>
 
@@ -68,34 +68,34 @@ rectangle "Sistema de Produ‡Æo da Ind£stria de Concreto" {
  
  
 
-4- Modelo de classes de an lise/ modelo conceitual:
+4- Modelo de classes de anÂ lise/ modelo conceitual:
   
 5- Casos de uso expandidos:
 Caso de Uso: Registrar Pedido
 Ator principal: Cliente.
 Outros Atores: Departamento de Vendas.
-Descri‡Æo: O cliente registra um pedido de concreto para entrega em um ou mais dias.
+Descriâ€¡Ã†o: O cliente registra um pedido de concreto para entrega em um ou mais dias.
 
 Requisitos do Sistema:
 -RS1: O sistema deve permitir que os clientes registrem
 -RS2: O sistema deve permitir que os clientes registrem pedidos de concreto.
 -RS3: O sistema deve permitir que o departamento de vendas receba os pedidos de concreto registrados pelos clientes.
 
-Fun‡äes B sicas:
+Funâ€¡Ã¤es BÂ sicas:
 -FB1:Registrar cliente.
 -FB2:Registrar pedido de Concreto.
 -FB3:Escalonar pedido de Concreto.
 
-Pr‚-condi‡äes:O cliente precisa estar registrado no sistema.
+Prâ€š-condiâ€¡Ã¤es:O cliente precisa estar registrado no sistema.
 
 Fluxo principal: 
 
-A‡Æo do Ator     | Resposta do Sistema    | Fun‡Æo B sica/Requisito
+Aâ€¡Ã†o do Ator     | Resposta do Sistema    | Funâ€¡Ã†o BÂ sica/Requisito
 -----------------|-----------------------|----------------------------
 1. O cliente     | 2. O sistema exibe um     |RS2
 acessa a funcio|formulario de registro       | 
 nalidade de      |de pedidos, solicitando     |
-registro de        |as informa‡äes:               |
+registro de        |as informaâ€¡Ã¤es:               |
 pedidos            |a. Tipo de concreto         |
                        |b.Quantidade de concreto |                     
                        |c. Local da entrega           |
@@ -106,10 +106,10 @@ pedidos            |a. Tipo de concreto         |
                  |                         |
 2. O cliente     |3. O sistema registra o  |FB2, RS2
 preenche o       |pedido e exibe uma       |
-formul rio e     |confirma‡Æo para o       |
+formulÂ rio e     |confirmaâ€¡Ã†o para o       |
 confirma o       |cliente, contendo o      |
 pedido.          |numero do pedido         |           
-                 |e as informa‡äes do      |
+                 |e as informaâ€¡Ã¤es do      |
                  |pedido                   |               
                  |                         |               
                  |                         |
@@ -121,12 +121,12 @@ pedido.          |numero do pedido         |
 
 Fluxo Alternativo:
 
-A‡Æo do ator     | Resposta do Sistema    | Fun‡Æo B sica/ Requisito
+Aâ€¡Ã†o do ator     | Resposta do Sistema    | Funâ€¡Ã†o BÂ sica/ Requisito
 -----------------|------------------------|--------------------------
 2a.se o cliente  |2a1. O sistema exibe                   |
-nÆo estiver      |uma mensagem de erro                   | RS1
+nÃ†o estiver      |uma mensagem de erro                   | RS1
 registrado no    |informando que o                       |           
-sistema,  O       cliente nÆo est                        |
+sistema,  O       cliente nÃ†o estÂ                        |
 sistema exibe    |registrado e solicita                  |     
 uma mensagem     |que ele se registre                    |
 de erro e        |antes de prosseguir.                   |
@@ -136,7 +136,7 @@ o cliente se     |registra no sistema                    |
                  |retorna para o passo 1                 |
                  | do fluxo principal.                   |
 
-P¢s-condi‡äes: O pedido ‚ registrado no sistema e enviado para o Departamento de vendas.
+PÂ¢s-condiâ€¡Ã¤es: O pedido â€š registrado no sistema e enviado para o Departamento de vendas.
 
 
 
